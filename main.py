@@ -36,7 +36,7 @@ trigger_sender = TriggerSender(
 win, kb = initialize_exp(settings)
 # 6. Setup stimulus bank
 stim_bank = StimBank(win,cfg['stim_config'])\
-    .convert_to_voice(['instruction_text','good_bye'])\
+    .convert_to_voice(['instruction_text','good_bye'], voice=settings.voice_name)\
     .preload_all()
 # stim_bank.preview_all() 
 settings.save_to_json() # save all settings to json file
@@ -68,6 +68,3 @@ trigger_sender.send(settings.triggers.get("exp_end"))
 # 10. Close everything
 ser.close()
 core.quit()
-
-
-

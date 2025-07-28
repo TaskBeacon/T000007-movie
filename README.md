@@ -11,6 +11,8 @@
 | PsyFlow Version      | 0.1.0       |
 | PsychoPy Version     |2025.1.1     |
 | Modality             | EEG         |
+| Language | Chinese |
+| Voice Name | zh-CN-YunyangNeural |
 
 ```{note}
 The movie is not publicly available due to potential copyright issues.
