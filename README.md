@@ -4,7 +4,7 @@
 |----------------------|------------------------------|
 | Name                 | Movie Watching Task |
 | Version              | main (1.0)                          |
-| URL / Repository     | https://github.com/TaskBeacon/Movie |
+| URL / Repository     | https://github.com/TaskBeacon/T000007-movie |
 | Short Description    | A passive video-watching task with a centered movie clip for EEG studies |
 | Created By           |Zhipeng Cao (zhipeng30@foxmail.com) |
 | Date Updated         |2025/06/23   |
@@ -63,9 +63,9 @@ This task is entirely passive and fixed across all participants.
 
 | Field       | Meaning                        |
 |-------------|--------------------------------|
-| subject_id  | Participant ID (101â€“999)       |
+| subject_id  | Participant ID (101â€?99)       |
 | subname     | Participant name (pinyin)      |
-| age         | Age (5â€“60)                     |
+| age         | Age (5â€?0)                     |
 | gender      | Gender (Male/Female)           |
 
 ### b. Window Settings
