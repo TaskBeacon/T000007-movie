@@ -1,0 +1,11 @@
+id: T000007
+slug: movie
+title: "Movie Watching Task"
+acquisition: eeg
+variant: baseline
+cognitive_domain: []
+maturity: piloted
+version:
+  release_tag: ""
+evidence: []
+maintainer: []
