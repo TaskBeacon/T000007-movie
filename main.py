@@ -1,8 +1,7 @@
-from psyflow import BlockUnit,StimBank, StimUnit,SubInfo,TaskSettings,TriggerSender
+﻿from psyflow import BlockUnit,StimBank, StimUnit,SubInfo,TaskSettings,initialize_triggers
 from psyflow import load_config,count_down, initialize_exp
 import pandas as pd
 from psychopy import core
-import serial
 from src import run_trial
 
 
@@ -21,16 +20,7 @@ settings.add_subinfo(subject_data)
 
 # 4. setup triggers
 settings.triggers = cfg['trigger_config']
-ser = serial.serial_for_url("loop://", baudrate=115200, timeout=1)
-# ser = serial.Serial("COM3", baudrate=115200, timeout=1)
-if not ser.is_open:
-    ser.open()
-
-# Create TriggerSender
-trigger_sender = TriggerSender(
-    trigger_func=lambda code: ser.write(bytes([1, 225, 1, 0, code])),
-    post_delay=0.001
-)
+trigger_runtime = initialize_triggers(cfg)
 
 # 5. Set up window & input
 win, kb = initialize_exp(settings)
@@ -41,7 +31,7 @@ stim_bank = StimBank(win,cfg['stim_config'])\
 # stim_bank.preview_all() 
 settings.save_to_json() # save all settings to json file
 
-trigger_sender.send(settings.triggers.get("exp_onset"))
+trigger_runtime.send(settings.triggers.get("exp_onset"))
 StimUnit('instruction',win,kb)\
     .add_stim(stim_bank.get('instruction_text'))\
     .add_stim(stim_bank.get('instruction_text_voice'))\
@@ -55,16 +45,18 @@ block = BlockUnit(
         window=win,
         keyboard=kb
     ).generate_conditions()\
-    .on_start(lambda b: trigger_sender.send(settings.triggers.get("block_onset")))\
-    .on_end(lambda b: trigger_sender.send(settings.triggers.get("block_end")))\
-    .run_trial(func=run_trial, stim_bank=stim_bank, trigger_sender=trigger_sender)
+    .on_start(lambda b: trigger_runtime.send(settings.triggers.get("block_onset")))\
+    .on_end(lambda b: trigger_runtime.send(settings.triggers.get("block_end")))\
+    .run_trial(func=run_trial, stim_bank=stim_bank, trigger_runtime=trigger_runtime)
 
 
 StimUnit('goodbye',win,kb)\
     .add_stim(stim_bank.get('good_bye'))\
     .add_stim(stim_bank.get('good_bye_voice'))\
     .wait_and_continue(terminate=True)
-trigger_sender.send(settings.triggers.get("exp_end"))
+trigger_runtime.send(settings.triggers.get("exp_end"))
 # 10. Close everything
-ser.close()
+trigger_runtime.close()
 core.quit()
+
+
