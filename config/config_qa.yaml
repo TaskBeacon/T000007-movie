@@ -1,7 +1,8 @@
 ﻿# ============================================================================
-# Base config (human run)
-# - Used by: python main.py
-# - Scope: human experiment only (no qa/sim section in this file)
+# QA config (dev + qa)
+# - Used by: python main.py qa --config config/config_qa.yaml
+# - Scope: qa/dev only (no sim section in this file)
+# - Profile: short smoke run
 # ============================================================================
 
 # === Subject Form ===========================================================
@@ -52,13 +53,13 @@ window:
 # === Task ===================================================================
 task:
   task_name: eeg_movie_present
-  save_path: ./outputs/human
+  save_path: ./outputs/qa
   language: Chinese
   voice_name: zh-CN-YunyangNeural
-  voice_enabled: true
+  voice_enabled: false
   total_blocks: 1
-  total_trials: 2
-  trial_per_block: 2
+  total_trials: 1
+  trial_per_block: 1
   conditions:
     - movie
   key_list:
@@ -84,11 +85,8 @@ stimuli:
   instruction_text:
     type: textbox
     text: |
-      [Movie Task]
-
-      You will watch a short movie clip.
-      Please keep your eyes near screen center and minimize movement.
-
+      [Movie QA]
+      Short smoke-run profile.
       Press [Space] to start.
     color: white
     pos:
@@ -102,16 +100,10 @@ stimuli:
       - 20
       - 5
 
-  instruction_text_voice:
-    type: sound
-    file: assets/instruction_text_voice.mp3
-
   good_bye:
     type: textbox
     text: |
-      Task completed.
-
-      Thank you for participating.
+      QA completed.
       Press [Space] to exit.
     color: white
     font: SimHei
@@ -122,15 +114,11 @@ stimuli:
       - 20
       - 5
 
-  good_bye_voice:
-    type: sound
-    file: assets/good_bye_voice.mp3
-
 # === Timing =================================================================
 timing:
   cue_duration: 0.05
   anticipation_duration: 0.05
-  movie_duration: 4.0
+  movie_duration: 2.0
 
 # === Triggers ===============================================================
 triggers:
@@ -158,3 +146,20 @@ triggers:
 
   timing:
     post_delay_s: 0.001
+
+# === QA Runtime =============================================================
+qa:
+  output_dir: outputs/qa
+  enable_scaling: true
+  timing_scale: 0.2
+  min_frames: 1
+  strict: false
+  max_wait_s: 10.0
+  acceptance_criteria:
+    required_columns:
+      - condition
+      - movie_onset_trigger
+    expected_trial_count: 1
+    allowed_keys:
+      - space
+    triggers_required: true

@@ -1,6 +1,12 @@
+# Ignore subject/runtime output data
 /data/
-/assets/*.mp4
-/src/__pycache__/
+/outputs/*
+!/outputs/.gitkeep
+outputs/human/
+outputs/qa/
+outputs/sim/
+outputs/sim_sampler/
+src/__pycache__/
 
 # TaskBeacon housekeeping (generated artifacts)
 __pycache__/

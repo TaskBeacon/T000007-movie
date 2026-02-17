@@ -1,7 +1,8 @@
 ﻿# ============================================================================
-# Base config (human run)
-# - Used by: python main.py
-# - Scope: human experiment only (no qa/sim section in this file)
+# Scripted simulation config
+# - Used by: python main.py sim --config config/config_scripted_sim.yaml
+# - Scope: scripted simulation only (no qa section in this file)
+# - Profile: short smoke run
 # ============================================================================
 
 # === Subject Form ===========================================================
@@ -52,13 +53,13 @@ window:
 # === Task ===================================================================
 task:
   task_name: eeg_movie_present
-  save_path: ./outputs/human
+  save_path: ./outputs/sim
   language: Chinese
   voice_name: zh-CN-YunyangNeural
-  voice_enabled: true
+  voice_enabled: false
   total_blocks: 1
-  total_trials: 2
-  trial_per_block: 2
+  total_trials: 1
+  trial_per_block: 1
   conditions:
     - movie
   key_list:
@@ -84,11 +85,7 @@ stimuli:
   instruction_text:
     type: textbox
     text: |
-      [Movie Task]
-
-      You will watch a short movie clip.
-      Please keep your eyes near screen center and minimize movement.
-
+      [Movie Scripted Sim]
       Press [Space] to start.
     color: white
     pos:
@@ -102,16 +99,10 @@ stimuli:
       - 20
       - 5
 
-  instruction_text_voice:
-    type: sound
-    file: assets/instruction_text_voice.mp3
-
   good_bye:
     type: textbox
     text: |
-      Task completed.
-
-      Thank you for participating.
+      Scripted simulation completed.
       Press [Space] to exit.
     color: white
     font: SimHei
@@ -122,15 +113,11 @@ stimuli:
       - 20
       - 5
 
-  good_bye_voice:
-    type: sound
-    file: assets/good_bye_voice.mp3
-
 # === Timing =================================================================
 timing:
   cue_duration: 0.05
   anticipation_duration: 0.05
-  movie_duration: 4.0
+  movie_duration: 2.0
 
 # === Triggers ===============================================================
 triggers:
@@ -158,3 +145,19 @@ triggers:
 
   timing:
     post_delay_s: 0.001
+
+# === Simulation Runtime =====================================================
+sim:
+  output_dir: outputs/sim
+  seed: 0
+  participant_id: sim001
+  session_id: sub-sim001_task-eeg_movie_present_seed0
+  log_path: outputs/sim/sub-sim001_task-eeg_movie_present_seed0_sim_events.jsonl
+  policy: warn
+  default_rt_s: 0.2
+  clamp_rt: false
+  responder:
+    type: scripted
+    kwargs:
+      key: space
+      rt_s: 0.25
