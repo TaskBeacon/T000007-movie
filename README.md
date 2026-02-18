@@ -16,10 +16,24 @@
 | Language | Chinese |
 | Voice Name | zh-CN-YunyangNeural |
 
-## Overview
+## 1. Task Overview
 
 This task presents a movie stimulus while participants watch passively.
 No trial response is required during movie playback.
+
+## 2. Task Flow
+
+### Block-Level Flow
+
+- Initialize runtime, triggers, and movie stimulus resources.
+- Present instructions and execute configured movie trials/blocks.
+- Save outputs and close PsychoPy runtime cleanly.
+
+### Trial-Level Flow
+
+- `pre_movie_fixation`: pre-playback fixation.
+- `movie_lead_in`: short lead-in stage before playback.
+- `movie_playback`: movie presentation window (passive viewing).
 
 ## Runtime Modes
 
@@ -28,7 +42,7 @@ No trial response is required during movie playback.
 - Scripted sim: `python main.py sim --config config/config_scripted_sim.yaml`
 - Sampler sim: `python main.py sim --config config/config_sampler_sim.yaml`
 
-## Config Files
+## 3. Configuration Summary
 
 - `config/config.yaml`: base human run profile
 - `config/config_qa.yaml`: QA/dev profile
@@ -57,3 +71,15 @@ See `assets/README.md` for:
 - Trigger config uses structured schema: `triggers.map/driver/policy/timing`.
 - Trial responder context is wired in `src/run_trial.py` via `set_trial_context(...)`.
 - Task-specific sampler is in `responders/task_sampler.py`.
+
+### Runtime Context Phases
+| Phase Label | Meaning |
+|---|---|
+| `pre_movie_fixation` | pre movie fixation stage in `src/run_trial.py` responder context. |
+| `movie_lead_in` | movie lead in stage in `src/run_trial.py` responder context. |
+| `movie_playback` | movie playback stage in `src/run_trial.py` responder context. |
+
+## 4. Methods (for academic publication)
+
+Participants passively view movie stimuli while event timing and trigger emissions are controlled for reproducible acquisition. Each trial includes fixation, lead-in, and playback stages without behavioral response requirements. The task is suitable for naturalistic viewing paradigms where synchronized presentation logs are required for downstream analysis.
+
