@@ -3,11 +3,11 @@
 ## Copyright Notice
 
 The original movie stimulus is **not distributed** in this repository.
-A placeholder movie file is included only for QA/sim/contract validation.
+A demo movie file is included only for QA/sim/contract validation.
 
-## Placeholder File
+## Demo File
 
-- `placeholder_movie.mp4`: local synthetic clip used to keep CI/QA runnable.
+- `demo_movie.mp4`: local synthetic clip used to keep CI/QA runnable.
 
 ## Replacing with Licensed Movie
 
@@ -22,4 +22,5 @@ A placeholder movie file is included only for QA/sim/contract validation.
 
 ## Important
 
-Do not use placeholder media for production data collection.
+Do not use demo media for production data collection.
+

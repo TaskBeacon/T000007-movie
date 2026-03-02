@@ -76,7 +76,7 @@ stimuli:
 
   movie:
     type: movie
-    filename: assets/placeholder_movie.mp4
+    filename: assets/demo_movie.mp4
     size:
       - 22.1
       - 12.4
@@ -115,8 +115,8 @@ stimuli:
 
 # === Timing =================================================================
 timing:
-  cue_duration: 0.05
-  anticipation_duration: 0.05
+  pre_movie_fixation_duration: 0.05
+  movie_lead_in_duration: 0.05
   movie_duration: 2.0
 
 # === Triggers ===============================================================
@@ -161,3 +161,5 @@ sim:
     kwargs:
       continue_key: space
       rt_continue_s: 0.25
+
+

@@ -35,6 +35,12 @@ No trial response is required during movie playback.
 - `movie_lead_in`: short lead-in stage before playback.
 - `movie_playback`: movie presentation window (passive viewing).
 
+### Controller Logic
+
+- Built-in sequential condition generation (`BlockUnit.generate_conditions(order="sequential")`).
+- One condition (`movie`) with no trial-level branching.
+- Trigger emission anchored to experiment/block boundaries and movie onset/offset.
+
 ## Runtime Modes
 
 - Human (default): `python main.py`
@@ -49,13 +55,35 @@ No trial response is required during movie playback.
 - `config/config_scripted_sim.yaml`: scripted simulation profile
 - `config/config_sampler_sim.yaml`: sampler simulation profile
 
+### a. Subject Info
+
+- Subject form fields: `subject_id`, `subname`, `age`, `gender`.
+- Subject mapping labels are defined in `subinfo_mapping`.
+
+### b. Window Settings
+
+- Fullscreen display at `1920x1080`, `deg` units, black background.
+- Monitor metadata: width `60 cm`, viewing distance `72 cm`.
+
+### c. Stimuli
+
+- `fixation`: centered `+`.
+- `movie`: `assets/demo_movie.mp4` (replace with licensed media for production).
+- `instruction_text` and `good_bye`: config-defined localized text boxes.
+
+### d. Timing
+
+- `timing.pre_movie_fixation_duration`
+- `timing.movie_lead_in_duration`
+- `timing.movie_duration`
+
 ## Assets and Copyright Workaround
 
 The original copyrighted movie clip is not included in this repository.
-A placeholder movie file is included for QA/sim and pipeline validation.
+A demo movie file is included for QA/sim and pipeline validation.
 
 See `assets/README.md` for:
-- placeholder file policy
+- demo file policy
 - how to replace with licensed movie media
 - expected filename/path constraints
 
@@ -82,4 +110,5 @@ See `assets/README.md` for:
 ## 4. Methods (for academic publication)
 
 Participants passively view movie stimuli while event timing and trigger emissions are controlled for reproducible acquisition. Each trial includes fixation, lead-in, and playback stages without behavioral response requirements. The task is suitable for naturalistic viewing paradigms where synchronized presentation logs are required for downstream analysis.
+
 

@@ -1,0 +1,41 @@
+﻿[
+  {
+    "id": "W2087530658",
+    "title": "Intersubject consistency of cortical MEG signals during movie viewing",
+    "year": 2014,
+    "journal": "NeuroImage",
+    "doi": "10.1016/j.neuroimage.2014.02.004",
+    "citation_count": 117,
+    "open_access": true,
+    "used_for": [
+      "naturalistic_movie_viewing_state_design",
+      "passive_continuous_stimulus_rationale"
+    ]
+  },
+  {
+    "id": "W2120149217",
+    "title": "Correlated Components of Ongoing EEG Point to Emotionally Laden Attention - A Possible Marker of Engagement?",
+    "year": 2012,
+    "journal": "Frontiers in Human Neuroscience",
+    "doi": "10.3389/fnhum.2012.00112",
+    "citation_count": 375,
+    "open_access": true,
+    "used_for": [
+      "eeg_movie_engagement_measurement",
+      "continuous_video_with_no_overt_task_response"
+    ]
+  },
+  {
+    "id": "W2809658419",
+    "title": "Are We Ready for Real-world Neuroscience?",
+    "year": 2018,
+    "journal": "Journal of Cognitive Neuroscience",
+    "doi": "10.1162/jocn_e_01276",
+    "citation_count": 245,
+    "open_access": true,
+    "used_for": [
+      "real_world_neuroscience_task_rationale",
+      "naturalistic_protocol_reporting"
+    ]
+  }
+]

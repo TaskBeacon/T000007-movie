@@ -1,11 +1,32 @@
-# CHANGELOG
+﻿# CHANGELOG
 
 All notable development changes for T000007-movie are documented here.
 
 ## [Unreleased]
 
+## [1.1.2] - 2026-03-02
+
+### Added
+- Added full literature contract bundle under `references/`:
+  - `references.yaml`
+  - `references.md`
+  - `parameter_mapping.md`
+  - `stimulus_mapping.md`
+  - `task_logic_audit.md`
+  - curated `selected_papers.json`
+
 ### Changed
-- Refactored `src/run_trial.py` to use `psyflow`'s native `next_trial_id()` and removed legacy internal `_next_trial_id` and `_deadline_s` boilerplate.
+- Refactored `src/run_trial.py` to use task-phase naming without MID leftovers:
+  - `cue` -> `pre_movie_fixation`
+  - `anticipation` -> `movie_lead_in`
+- Renamed timing config keys across all profiles:
+  - `timing.cue_duration` -> `timing.pre_movie_fixation_duration`
+  - `timing.anticipation_duration` -> `timing.movie_lead_in_duration`
+- Updated README to include contract-recommended subsections and controller/config summaries.
+- Refactored `src/run_trial.py` to use `psyflow` native `next_trial_id()` and removed legacy internal `_next_trial_id` and `_deadline_s` boilerplate.
+
+### Fixed
+- Removed zero-duration terminal feedback marker from runtime trial flow.
 
 ## [1.1.1] - 2026-02-18
 - Refactored responder context phase names in `src/run_trial.py` to task-specific labels (removed generic MID-style phase naming).
@@ -29,7 +50,7 @@ All notable development changes for T000007-movie are documented here.
   - `responders/README.md`
   - `responders/task_sampler.py`
 - Added `outputs/.gitkeep` and standardized output folder handling.
-- Added `assets/README.md` with placeholder media and replacement guidance.
+- Added `assets/README.md` with demo media and replacement guidance.
 
 ### Changed
 - Refactored `src/run_trial.py` to include `set_trial_context(...)` and simulation-compatible response window handling.
@@ -46,3 +67,4 @@ All notable development changes for T000007-movie are documented here.
 - `psyflow-validate <task>` passes contract checks.
 - `psyflow-qa <task> --config config/config_qa.yaml --no-maturity-update` passes.
 - `python main.py sim --config config/config_scripted_sim.yaml` runs and writes sim artifacts.
+
