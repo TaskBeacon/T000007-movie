@@ -1,0 +1,93 @@
+task_plot_spec:
+  spec_version: '0.2'
+  meta:
+    task_name: Movie Watching Task
+    mode: existing
+    task_id: ''
+  figure:
+    output:
+      filename: task_flow.png
+      dpi: 300
+      width_in: 16.0
+      background: white
+    layout:
+      max_conditions: 4
+      screens_per_timeline: 6
+      screen_overlap_ratio: 0.1
+      screen_slope: 0.08
+      screen_slope_deg: 25.0
+      timeline_gap: 0.18
+      screen_aspect_ratio: 1.4545454545454546
+      left_margin: 0.2
+      right_margin: 0.03
+      top_margin: 0.03
+      bottom_margin: 0.05
+      condition_label_gap: 0.014
+      phase_label_pad: 0.01
+      duration_label_gap: 0.006
+      timeline_arrow_gap: 0.01
+      timeline_arrow_screen_clearance: 0.007
+      timeline_arrow_text_clearance: 0.01
+      timeline_arrow_extra_per_screen: 0.015
+      timeline_arrow_min_y: 0.02
+      timeline_arrow_max_y: 0.96
+  timelines:
+  - condition: movie
+    display_condition_label: Movie
+    phases:
+    - phase_name: pre movie fixation
+      display_phase_label: Fixation
+      duration_ms:
+        fixed: 0
+      response_window_ms: null
+      display_timing_label: 0 ms
+      stim_ids:
+      - fixation
+      stimulus_example:
+        summary: +
+        modality: visual
+        draw_hint: text
+        render_items:
+        - kind: text
+          text: +
+          color: white
+          pos: null
+          height: null
+      notes: ''
+    - phase_name: movie lead in
+      display_phase_label: Movie Lead In
+      duration_ms:
+        fixed: 0
+      response_window_ms: null
+      display_timing_label: 0 ms
+      stim_ids:
+      - fixation
+      stimulus_example:
+        summary: +
+        modality: visual
+        draw_hint: text
+        render_items:
+        - kind: text
+          text: +
+          color: white
+          pos: null
+          height: null
+      notes: ''
+    - phase_name: movie playback
+      display_phase_label: Movie Playback
+      duration_ms:
+        fixed: 4000
+      response_window_ms:
+        fixed: 4000
+      display_timing_label: 4000 ms
+      stim_ids:
+      - movie
+      stimulus_example:
+        summary: '[video:movie]'
+        modality: visual
+        draw_hint: annotation
+        render_items:
+        - kind: annotation
+          text: 'Video: movie'
+      notes: ''
+  legend: []

@@ -1,4 +1,4 @@
-﻿# Movie Watching Task
+# Movie Watching Task
 
 ![Maturity: piloted](https://img.shields.io/badge/Maturity-piloted-16a34a?style=flat-square&labelColor=111827)
 
@@ -22,6 +22,8 @@ This task presents a movie stimulus while participants watch passively.
 No trial response is required during movie playback.
 
 ## 2. Task Flow
+
+![Task flow](./task_flow.png)
 
 ### Block-Level Flow
 
