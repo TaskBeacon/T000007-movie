@@ -5,7 +5,7 @@
 | Parameter ID | Config Path | Implemented Value | Source Paper ID | Evidence (quote/figure/table) | Decision Type | Notes |
 |---|---|---|---|---|---|---|
 | `total_blocks` | `task.total_blocks` | `1` | `W2087530658` | Movie segment presented continuously during one acquisition run. | `inferred` | Single block keeps trigger scope simple for EEG logging. |
-| `trial_per_block` | `task.trial_per_block` | `2` (human), `1` (qa/sim) | `W2809658419` | Naturalistic protocol emphasizes stable continuous viewing rather than many rapid trials. | `inferred` | QA/sim reduced for smoke validation only. |
+| `trial_per_block` | `task.trial_per_block` | `1` (human and qa/sim) | `W2809658419` | Naturalistic protocol emphasizes stable continuous viewing rather than many rapid trials. | `inferred` | One configured movie condition is played once per run to avoid unintended repeated exposure. |
 | `conditions` | `task.conditions` | `['movie']` | `W2087530658` | Protocol is passive viewing of movie stimulus without condition switching. | `reference_exact` | No participant-visible condition labels. |
 | `key_list` | `task.key_list` | `['space']` | `W2809658419` | Interaction is start/continue control, not in-movie decision behavior. | `inferred` | Used for instruction/goodbye progression only. |
 | `pre_movie_fixation_duration` | `timing.pre_movie_fixation_duration` | `0.05` | `W2120149217` | Continuous EEG movie paradigms typically include short pre-onset stabilization period. | `inferred` | Short duration in this repo is optimized for QA/sim speed. |

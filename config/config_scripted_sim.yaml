@@ -1,4 +1,4 @@
-﻿# ============================================================================
+# ============================================================================
 # Scripted simulation config
 # - Used by: python main.py sim --config config/config_scripted_sim.yaml
 # - Scope: scripted simulation only (no qa section in this file)
@@ -76,7 +76,7 @@ stimuli:
 
   movie:
     type: movie
-    filename: assets/demo_movie.mp4
+    filename: assets/reference_movie.mp4
     size:
       - 22.1
       - 12.4
@@ -161,5 +161,3 @@ sim:
     kwargs:
       key: space
       rt_s: 0.25
-
-

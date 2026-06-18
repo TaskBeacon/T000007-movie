@@ -23,7 +23,7 @@ No trial response is required during movie playback.
 
 ## 2. Task Flow
 
-![Task flow](./task_flow.png)
+![Task Flow](task_flow.png)
 
 ### Block-Level Flow
 
@@ -70,7 +70,7 @@ No trial response is required during movie playback.
 ### c. Stimuli
 
 - `fixation`: centered `+`.
-- `movie`: `assets/demo_movie.mp4` (replace with licensed media for production).
+- `movie`: `assets/reference_movie.mp4` generated reference movie clip.
 - `instruction_text` and `good_bye`: config-defined localized text boxes.
 
 ### d. Timing
@@ -81,12 +81,13 @@ No trial response is required during movie playback.
 
 ## Assets and Copyright Workaround
 
-The original copyrighted movie clip is not included in this repository.
-A demo movie file is included for QA/sim and pipeline validation.
+The repository includes a generated reference movie clip for open, reproducible
+task execution. Studies using a specific copyrighted or licensed movie should
+replace the clip and document the study-specific media source.
 
 See `assets/README.md` for:
-- demo file policy
-- how to replace with licensed movie media
+- generated reference clip policy
+- how to replace with study-specific approved movie media
 - expected filename/path constraints
 
 ## Outputs
@@ -112,5 +113,3 @@ See `assets/README.md` for:
 ## 4. Methods (for academic publication)
 
 Participants passively view movie stimuli while event timing and trigger emissions are controlled for reproducible acquisition. Each trial includes fixation, lead-in, and playback stages without behavioral response requirements. The task is suitable for naturalistic viewing paradigms where synchronized presentation logs are required for downstream analysis.
-
-

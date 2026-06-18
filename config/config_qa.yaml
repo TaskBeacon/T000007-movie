@@ -1,4 +1,4 @@
-﻿# ============================================================================
+# ============================================================================
 # QA config (dev + qa)
 # - Used by: python main.py qa --config config/config_qa.yaml
 # - Scope: qa/dev only (no sim section in this file)
@@ -76,7 +76,7 @@ stimuli:
 
   movie:
     type: movie
-    filename: assets/demo_movie.mp4
+    filename: assets/reference_movie.mp4
     size:
       - 22.1
       - 12.4
@@ -163,5 +163,3 @@ qa:
     allowed_keys:
       - space
     triggers_required: true
-
-

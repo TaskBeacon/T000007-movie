@@ -57,8 +57,8 @@ task:
   voice_name: zh-CN-YunyangNeural
   voice_enabled: true
   total_blocks: 1
-  total_trials: 2
-  trial_per_block: 2
+  total_trials: 1
+  trial_per_block: 1
   conditions:
     - movie
   key_list:
@@ -75,7 +75,7 @@ stimuli:
 
   movie:
     type: movie
-    filename: assets/demo_movie.mp4
+    filename: assets/reference_movie.mp4
     size:
       - 22.1
       - 12.4
@@ -158,5 +158,3 @@ triggers:
 
   timing:
     post_delay_s: 0.001
-
-

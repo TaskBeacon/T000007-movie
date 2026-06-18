@@ -16,5 +16,5 @@
 ## Notes
 
 - The implemented task is a passive naturalistic movie-viewing protocol with no trial-level choice response.
-- QA/sim uses a demo movie asset for pipeline validation; human runs should replace it with licensed stimuli.
+- The repository includes a generated reference movie clip for open execution; studies using a specific licensed movie should document that approved media source.
 

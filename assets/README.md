@@ -1,17 +1,18 @@
-﻿# Movie Assets
+# Movie Assets
 
-## Copyright Notice
+## Asset Policy
 
-The original movie stimulus is **not distributed** in this repository.
-A demo movie file is included only for QA/sim/contract validation.
+The repository includes a generated reference movie clip for open, reproducible
+task execution. It avoids bundling restricted third-party movie material while
+keeping the task runnable in human, QA, and simulation profiles.
 
-## Demo File
+## Reference File
 
-- `demo_movie.mp4`: local synthetic clip used to keep CI/QA runnable.
+- `reference_movie.mp4`: generated synthetic movie clip used by the default configs.
 
-## Replacing with Licensed Movie
+## Replacing With Study-Specific Movie Media
 
-1. Put your licensed movie file in this folder.
+1. Put your approved movie file in this folder.
 2. Update `config/config.yaml` and sim/qa configs as needed:
    - `stimuli.movie.filename`
    - `timing.movie_duration`
@@ -22,5 +23,5 @@ A demo movie file is included only for QA/sim/contract validation.
 
 ## Important
 
-Do not use demo media for production data collection.
-
+If a study requires a specific copyrighted or licensed movie, replace the
+reference clip and document the media source in `references/`.

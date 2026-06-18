@@ -1,8 +1,13 @@
-﻿# CHANGELOG
+# CHANGELOG
 
 All notable development changes for T000007-movie are documented here.
 
 ## [Unreleased]
+
+### Changed
+- Normalized the README task-flow image embed to the current task-build contract.
+- Set the human movie profile to one trial per block so the single configured movie clip is not repeated unintentionally.
+- Reframed the bundled movie as a generated reference asset and updated README/reference/asset notes accordingly.
 
 ## [1.1.2] - 2026-03-02
 
@@ -50,7 +55,7 @@ All notable development changes for T000007-movie are documented here.
   - `responders/README.md`
   - `responders/task_sampler.py`
 - Added `outputs/.gitkeep` and standardized output folder handling.
-- Added `assets/README.md` with demo media and replacement guidance.
+- Added `assets/README.md` with reference media and replacement guidance.
 
 ### Changed
 - Refactored `src/run_trial.py` to include `set_trial_context(...)` and simulation-compatible response window handling.
@@ -67,4 +72,3 @@ All notable development changes for T000007-movie are documented here.
 - `psyflow-validate <task>` passes contract checks.
 - `psyflow-qa <task> --config config/config_qa.yaml --no-maturity-update` passes.
 - `python main.py sim --config config/config_scripted_sim.yaml` runs and writes sim artifacts.
-
