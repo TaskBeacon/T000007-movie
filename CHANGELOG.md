@@ -9,6 +9,9 @@ All notable development changes for T000007-movie are documented here.
 - Set the human movie profile to one trial per block so the single configured movie clip is not repeated unintentionally.
 - Reframed the bundled movie as a generated reference asset and updated README/reference/asset notes accordingly.
 
+### Removed
+- Removed unused empty `src/utils.py`.
+
 ## [1.1.2] - 2026-03-02
 
 ### Added
